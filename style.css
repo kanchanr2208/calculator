@@ -65,7 +65,7 @@ body {
 
 }
 
-.number {
+.number, .adjacent {
     background-color: lightgoldenrodyellow;
     width: 3.5vw;
     height: 10vh;

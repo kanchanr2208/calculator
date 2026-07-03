@@ -5,7 +5,7 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-    return finalResult =(b - a);
+    return finalResult =(a - b);
 }
 
 function multiply(a, b) {
@@ -22,3 +22,4 @@ function divide(a, b) {
     return finalResult;
 }
 
+console.log(subtract(10, 2))
