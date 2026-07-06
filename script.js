@@ -4,6 +4,8 @@ let variableTwo = null;
 let isOperator = null; 
 let firstNumber = [];
 let secondNumber = [];
+let displayContent = "";
+
 
 function addition(a, b) {
     return finalResult = (a + b);
@@ -19,12 +21,28 @@ function multiplication(a, b) {
 
 function division(a, b) {
     if (b == 0) {
-        finalResult = "FU. Clearing the board";
+        updateDisplay("FU. Clearing the board") //not working right now
+        clearBoard();        
     } else {
         finalResult = a / b; 
     }
 
     return finalResult;
+}
+
+function clearBoard() {
+    finalResult = null;
+    variableOne = null;
+    variableTwo = null;
+    isOperator = null; 
+    firstNumber = [];
+    secondNumber = [];
+}
+
+function updateDisplay(displayContent) {
+    let answer = document.querySelector(".answer")
+    answer.textContent = displayContent;
+
 }
 
 let one = document.querySelector(".one")
@@ -47,200 +65,204 @@ let clear = document.querySelector(".clear")
 let equalTo = document.querySelector(".equals")
 let back = document.querySelector(".back")
 
+
 one.addEventListener("click", (e) => {
     if(isOperator === null) {
-        firstNumber.push(e.target.textContent)
+        firstNumber.push(e.target.textContent);
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
-    
 })
 
 two.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
 })
 
 three.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
 })
 
 four.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
-    }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
+    } 
 })
 
 five.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
-    }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
+    }   
 })
 
 six.addEventListener("click", (e) => {
    if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
-    }
-    console.log(firstNumber);
-    console.log(secondNumber);
-   
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
+    } 
 })
 
 seven.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
+        
     } else {
         secondNumber.push(e.target.textContent)
-    }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
+    }    
 })
 
 eight.addEventListener("click", (e) => {
    if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-   
 })
 
 nine.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
 })
 
 zero.addEventListener("click", (e) => {
     if(isOperator === null) {
         firstNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join(""));
     } else {
         secondNumber.push(e.target.textContent)
+        updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
     }
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
 })
 
 decimal.addEventListener("click", (e) => {
     if(isOperator === null) {
         if (!firstNumber.includes(".")) {
             firstNumber.push(e.target.textContent)
+            updateDisplay(firstNumber.join(""));
         }
     } else {
         if (!secondNumber.includes(".")) {
             secondNumber.push(e.target.textContent)
+            updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
         }
     }
-    console.log(firstNumber);
-    console.log(secondNumber); 
 })
 
 negative.addEventListener("click", (e) => {
     if(isOperator === null) {
         if(firstNumber[0] === "-") {
             firstNumber.shift()
+            updateDisplay(firstNumber.join(""));
         } else {
             firstNumber.unshift("-") 
+            updateDisplay(firstNumber.join(""));
         }
     } else {
          if(secondNumber[0] === "-") {
             secondNumber.shift()
+            updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
         } else {
             secondNumber.unshift("-") 
+            updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
         }
     }
-    console.log(firstNumber);
-    console.log(secondNumber); 
 })
 
 plus.addEventListener("click", (e) => {
     isOperator = e.target.textContent;
-    console.log(isOperator)
+    updateDisplay(firstNumber.join("") + " " + isOperator);
 })
 
 minus.addEventListener("click", (e) => {
     isOperator = e.target.textContent;
-    console.log(isOperator)
-    
+    updateDisplay(firstNumber.join("") + " " + isOperator);
 })
 
 multiply.addEventListener("click", (e) => {
     isOperator = e.target.textContent;
-    console.log(isOperator)
-    
+    updateDisplay(firstNumber.join("") + " " + isOperator);
 })
 
 divide.addEventListener("click", (e) => {
     isOperator = e.target.textContent;
-    console.log(isOperator)
-    
+    updateDisplay(firstNumber.join("") + " " + isOperator);
 })
 
 back.addEventListener("click", (e) => {
-    console.log(e.target.textContent)
-    
-})
-
-clear.addEventListener("click", () => {
+   if(secondNumber.length > 0) {
+    secondNumber.pop()
+    updateDisplay(firstNumber.join("") + " " + isOperator + " " + secondNumber.join(""));
+   } else if (secondNumber.length === 0 && isOperator !== null) {
+    isOperator = null;
+    updateDisplay(firstNumber.join(""));
+   } else if (isOperator === null && firstNumber.length > 0) {
+    firstNumber.pop();
+    updateDisplay(firstNumber.join(""));
+   } else {
     firstNumber = [];
     secondNumber = [];
     variableOne = null;
     variableTwo = null;
     isOperator = null;
+    updateDisplay("");
+   }
+})
+
+clear.addEventListener("click", () => {
+    clearBoard();
+    updateDisplay("0");
 })
 
 equalTo.addEventListener("click", (e) => {
     let joinedFirstNumber = firstNumber.join("");
     let joinedSecondNumber = secondNumber.join("");
-    console.log(joinedFirstNumber)
-    console.log(joinedSecondNumber)
+
     variableOne = Number(joinedFirstNumber);
     variableTwo = Number(joinedSecondNumber);
     if ((variableOne === null && isOperator === null && variableTwo === null) || 
         (variableOne === null && isOperator === null && variableTwo !== null) || 
         (variableOne !== null && isOperator === null && variableTwo !== null)) {
         finalResult = null;
+        updateDisplay(variableOne);
     } else if (variableOne !== null  && isOperator === null && variableTwo === null) {
         finalResult = variableOne;
+        updateDisplay(variableOne);
     } else if (variableOne !== null && isOperator !== null && variableTwo === null) {
         finalResult = variableOne;
+        updateDisplay(finalResult);
     } else if (variableOne !== null && isOperator !== null && variableTwo !== null) {
         if(isOperator == "+") {
             addition(variableOne, variableTwo)
@@ -253,7 +275,7 @@ equalTo.addEventListener("click", (e) => {
         } else {
             finalResult = "error"
         }
+        updateDisplay(finalResult);
     }
-    console.log(finalResult)
 })
 
