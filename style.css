@@ -11,12 +11,21 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
     margin: 0;
     padding: 0;
 }
+
+.message {
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    visibility: hidden;
+}
+
 
 .calculator {
     height: 70vh;
@@ -39,6 +48,8 @@ body {
     border-radius: 1rem;
     padding: 1.5rem 0.6rem;
 }
+
+
 
 .answer {
     padding: 0;
@@ -65,7 +76,9 @@ body {
 
 }
 
-.number, .adjacent {
+.number, 
+.decimal,
+.negative {
     background-color: lightgoldenrodyellow;
     width: 3.5vw;
     height: 10vh;
